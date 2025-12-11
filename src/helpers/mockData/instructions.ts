@@ -1,91 +1,65 @@
-// INSTRUCTIONS - Hướng dẫn Gallery
+// INSTRUCTIONS - Hướng dẫn Gallery (Bản rút gọn)
 export const instructionsData: { [key: string]: any } = {
   'YagjLBIAACEAWFY3': {
     data: {
       slides: [
         {
           title: [
-            { text: 'Chào mừng đến Gallery 3D – Hành trình Chương 6', type: 'heading1', spans: [] }
+            { text: 'Chào mừng đến Gallery 3D – Chương 6', type: 'heading1', spans: [] }
           ],
           text: [
             {
-              text: 'Đây là không gian 3D giúp bạn khám phá Chương 6: Tư tưởng Hồ Chí Minh về văn hoá và đạo đức theo cách trực quan và sống động.',
+              text: 'Không gian 3D này giúp bạn khám phá tư tưởng Hồ Chí Minh về văn hoá và đạo đức một cách trực quan, sinh động và dễ tiếp cận.',
               type: 'paragraph',
               spans: []
             },
             {
-              text: 'Thay vì chỉ đọc lý thuyết, bạn có thể "đi dạo" qua từng phòng trưng bày, quan sát hình ảnh, đọc trích dẫn, trải nghiệm tình huống và tự liên hệ với bản thân.',
+              text: 'Bạn sẽ “đi qua” các phòng, xem hình ảnh, đọc trích dẫn và trải nghiệm những tình huống gắn với đời sống hôm nay.',
               type: 'paragraph',
               spans: []
             },
             {
-              text: 'Toàn bộ gallery được thiết kế như một hành trình: từ bối cảnh – lý luận – thực tiễn – suy ngẫm – thiếu nhi – đời sống thường ngày – tới những trích dẫn kết tinh tư tưởng Hồ Chí Minh.',
+              text: 'Gallery được thiết kế như một hành trình từ nền tảng → thực tiễn → suy ngẫm → vận dụng.',
               type: 'paragraph',
               spans: []
             }
           ],
           image: { url: '' }
         },
+
         {
           title: [
-            { text: 'Hành trình các không gian', type: 'heading1', spans: [] }
+            { text: '7 không gian chính', type: 'heading1', spans: [] }
           ],
           text: [
-            {
-              text: '• Bem-vindo – Cổng Văn Hoá: điểm khởi đầu, giới thiệu tổng quan Chương 6 và cách đi trong gallery.',
-              type: 'paragraph',
-              spans: []
-            },
-            {
-              text: '• Ensaios – Không gian lý luận: các bài luận, khái niệm văn hoá, năm điểm lớn xây dựng nền văn hoá mới, vai trò văn hoá trong cách mạng.',
-              type: 'paragraph',
-              spans: []
-            },
-            {
-              text: '• Exposições – Bảo tàng thị giác: trưng bày trực quan về chống nạn mù chữ, Đời sống mới, Cần – Kiệm – Liêm – Chính, giáo dục và văn nghệ.',
-              type: 'paragraph',
-              spans: []
-            },
-            {
-              text: '• Observatório – Đài quan sát tư tưởng: không gian suy ngẫm, đặt câu hỏi cho chính mình về văn hoá và đạo đức hôm nay.',
-              type: 'paragraph',
-              spans: []
-            },
-            {
-              text: '• Infantis – Góc thiếu nhi: nội dung về thiếu nhi, trường học mới, thư Bác gửi các cháu, thế hệ măng non.',
-              type: 'paragraph',
-              spans: []
-            },
-            {
-              text: '• Contos & Novelas – Chuyện đời thường: các tình huống đạo đức nhỏ gắn với Cần – Kiệm – Liêm – Chính trong đời sống sinh viên.',
-              type: 'paragraph',
-              spans: []
-            },
-            {
-              text: '• Poesias – Phòng trích dẫn: những câu nói, trích dẫn đắt giá của Hồ Chí Minh, giúp tổng kết và khắc sâu tinh thần Chương 6.',
-              type: 'paragraph',
-              spans: []
-            }
+            { text: '• Bem-vindo – Cổng văn hoá mở đầu hành trình.', type: 'paragraph', spans: [] },
+            { text: '• Ensaios – Lý luận: khái niệm văn hoá, năm điểm lớn, vai trò văn hoá.', type: 'paragraph', spans: [] },
+            { text: '• Exposições – Trực quan: mù chữ, Đời sống mới, Cần–Kiệm–Liêm–Chính.', type: 'paragraph', spans: [] },
+            { text: '• Observatório – Suy ngẫm: những câu hỏi dành cho chính bạn.', type: 'paragraph', spans: [] },
+            { text: '• Infantis – Thiếu nhi: thế hệ măng non và giáo dục mới.', type: 'paragraph', spans: [] },
+            { text: '• Contos & Novelas – Chuyện đời thường: các tình huống đạo đức gần gũi.', type: 'paragraph', spans: [] },
+            { text: '• Poesias – Trích dẫn: tinh hoa tư tưởng Hồ Chí Minh.', type: 'paragraph', spans: [] }
           ],
           image: { url: '' }
         },
+
         {
           title: [
-            { text: 'Cách trải nghiệm Gallery', type: 'heading1', spans: [] }
+            { text: 'Cách trải nghiệm', type: 'heading1', spans: [] }
           ],
           text: [
             {
-              text: 'Hãy di chuyển theo vòng: Bem-vindo → Ensaios → Exposições → Observatório → Infantis → Contos & Novelas → Poesias để cảm nhận trọn vẹn logic của Chương 6.',
+              text: 'Hãy di chuyển theo vòng: Bem-vindo → Ensaios → Exposições → Observatório → Infantis → Contos & Novelas → Poesias.',
               type: 'paragraph',
               spans: []
             },
             {
-              text: 'Khi mở một nội dung, hãy đọc chậm, liên hệ với thực tế cuộc sống và tự hỏi: tư tưởng văn hoá, đạo đức mà Bác nói có thể áp dụng thế nào vào hôm nay?',
+              text: 'Khi xem nội dung, hãy ngẫm: “Điều này liên hệ gì với cuộc sống của mình hôm nay?”',
               type: 'paragraph',
               spans: []
             },
             {
-              text: 'Mục tiêu của gallery không chỉ là "ôn thi Chương 6" mà còn để bạn thực sự cảm nhận: văn hoá là nền tảng tinh thần của xã hội và là động lực phát triển đất nước.',
+              text: 'Mục tiêu cuối cùng: hiểu rằng văn hoá là nền tảng tinh thần và động lực của sự phát triển.',
               type: 'paragraph',
               spans: []
             }

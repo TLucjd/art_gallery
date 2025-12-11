@@ -12,6 +12,9 @@ import { contosENovelasData } from './contosENovelas';
 import { infantisData } from './infantis';
 import { boasVindasData } from './boasVindas';
 
+// Re-export để các component khác có thể import trực tiếp
+export { boasVindasData } from './boasVindas';
+
 // Tổng hợp tất cả mock data
 export const mockContentById: { [key: string]: any } = {
   ...instructionsData,

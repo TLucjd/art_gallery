@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import '../assets/fonts/font-faces.css';
 
 const GlobalStyles = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap');
 
     :root{
         --l2b-transparent: transparent;
@@ -29,19 +29,19 @@ const GlobalStyles = createGlobalStyle`
     }
     body{
       margin: 0;
-      font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
     p, div, textarea{
-      font-family: 'Volkart-Light', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-weight: normal;
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 300;
     }
     h1, h2 {
-      font-family: 'Volkart-Bold', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-weight: normal;
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 700;
     }
     h3, h4, h5, h6{
-      font-family: 'Volkart-Regular', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-weight: normal;
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 600;
     }
 `;
 

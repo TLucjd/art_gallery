@@ -5,10 +5,11 @@ import Client from '../../helpers/api';
 
 import ImageGalleryPagination from '../ImageGalleryPagination';
 
-import { Container, Content, GalleryImage, GalleryMobile } from './styles';
+import { Container, Content, GalleryImage, GalleryMobile, HorizontalLayout, ImageSection, TextSection } from './styles';
 
 interface IContentProps{
   contentId: string;
+  layout?: 'vertical' | 'horizontal'; // vertical: ảnh trên text dưới, horizontal: ảnh trái text phải
 }
 
 interface IGalleryDocument{
@@ -21,7 +22,7 @@ interface IGalleryDocument{
   }
 }
 
-const ContentGallery: React.FC<IContentProps> = ({contentId}) => {
+const ContentGallery: React.FC<IContentProps> = ({contentId, layout = 'vertical'}) => {
   const [content, setContent] = useState<IGalleryDocument>();
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -40,7 +41,40 @@ const ContentGallery: React.FC<IContentProps> = ({contentId}) => {
 
   return (
     <>
-      {content && (
+      {content && layout === 'horizontal' && (
+        <Container>
+          <HorizontalLayout>
+            {content.data.galeria.map((galleryItem: any, index: number) => {
+              if(index === currentImage){
+                return(
+                  <React.Fragment key={contentId+index}>
+                    <ImageSection>
+                      <GalleryImage src={galleryItem.imagem.url} alt={galleryItem.imagem.alt} />
+                      {content.data.galeria.length > 1 && (
+                        <ImageGalleryPagination currentPage={currentImage} setCurrentPage={setCurrentImage} totalPages={content.data.galeria.length} />
+                      )}
+                    </ImageSection>
+                    <TextSection>
+                      {galleryItem.legenda && galleryItem.legenda.length > 0 && (
+                        <div className="title">
+                          {RichText.render(galleryItem.legenda)}
+                        </div>
+                      )}
+                      {galleryItem.texto_mobile.length > 0 && (
+                        <div className="content">
+                          {RichText.render(galleryItem.texto_mobile)}
+                        </div>
+                      )}
+                    </TextSection>
+                  </React.Fragment>
+                );
+              }
+            })}
+          </HorizontalLayout>
+        </Container>
+      )}
+
+      {content && layout === 'vertical' && (
         <Container>
           <Content>
             {content.data.galeria.map((galleryItem: any, index: number) => {

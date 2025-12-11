@@ -24,9 +24,9 @@ export const Content = styled.div`
   position: relative;
   background: #fff;
   width: 90%;
-  max-width: 700px;
+  max-width: 800px;
   height: 90%; 
-  max-height: 350px;
+  max-height: 550px;
   
   display: flex;
   align-items: center;
@@ -40,33 +40,51 @@ export const Content = styled.div`
 `;
 
 export const Slide = styled.div`
-  padding: 40px;
+  padding: 50px;
   background: transparent;
   text-align: center;
   width: 100%;
+  overflow-y: auto;
+  max-height: 100%;
 
   h1{
-    margin: 0 auto 10px;
+    margin: 0 auto 20px;
     color: #333333;
+    font-size: 28px;
   }
 
   p{
-    max-width: 470px;
+    max-width: 600px;
     width: 90%;
     margin: 0 auto;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     color: #333333;
-    font-size: 17px;
-    line-height: 1.5em;
+    font-size: 18px;
+    line-height: 1.8em;
   }
 
   p + p{
-    margin-top: 10px;
+    margin-top: 15px;
+  }
+
+  ul{
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  li{
+    color: #333333;
+    font-size: 18px;
+    line-height: 1.8em;
+    margin-bottom: 10px;
   }
 
   img{
     display: block;
-    margin: 0 auto 10px;
+    margin: 0 auto 20px;
     max-width: 70px;
   }
 
@@ -74,10 +92,11 @@ export const Slide = styled.div`
     padding: 50px 20px;
 
     h1{
-      font-size: 17px;
+      font-size: 20px;
     }
-    p{
-      font-size: 13px;
+    p, li{
+      font-size: 15px;
+      line-height: 1.6em;
     }
 
     img{

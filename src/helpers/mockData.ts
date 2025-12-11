@@ -943,7 +943,7 @@ const infantisData: { [key: string]: any } = {
 // ============================================================
 // BOAS VINDAS - Cổng văn hoá (chưa có nội dung chi tiết)
 // ============================================================
-const boasVindasData: { [key: string]: any } = {
+export const boasVindasData: { [key: string]: any } = {
   'YK7_XBAAACYAYEN3': {
     data: {
       tipo_de_conteudo: false,

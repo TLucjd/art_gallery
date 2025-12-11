@@ -1,4 +1,4 @@
-import { getMockDataById, mockQuery } from './mockData';
+import { getMockDataById, mockQuery } from './mockData/index';
 
 // ALWAYS USE MOCK DATA - No API calls
 const MockClient = {
@@ -15,6 +15,6 @@ const MockClient = {
 const Client: any = MockClient;
 
 console.log('📦 Running with LOCAL MOCK DATA ONLY - No API calls');
-console.log('✏️ Edit src/helpers/mockData.ts to change content');
+console.log('✏️ Edit files in src/helpers/mockData/ to change content');
 
 export default Client;
