@@ -51,6 +51,7 @@ const ContentData: IContentData = {
 
   'YK8CYxAAACUAYFDH': {position: '11.756 1.600 -5.340', rotation: '0 -90 0', width: 1, height: 1.5, name: 'exposicoes_capa_01'},
   'YK8LaRAAACMAYHkL': {position: '11.736 1.600 -2.962', rotation: '0 -90 0', width: 1, height: 1.5, name: 'exposicoes_capa_02'},
+  'EXPO_003_NEW': {position: '11.736 1.600 -0.500', rotation: '0 -90 0', width: 1, height: 1.5, name: 'exposicoes_capa_03'},
 
   'YK7F4xAAACUAX0KH': {position: '-27.163 4.948 -2.720', rotation: '-1.390 90 0', width: .4, height: .6, name: 'ContoENovelas_capa_01'},
   'YK7NYBAAACQAX2On': {position: '-29.410 4.948 -2.720', rotation: '-1.390 90 0', width: .4, height: .6, name: 'ContoENovelas_capa_02'},
@@ -80,7 +81,7 @@ const Covers: React.FC<IConversProps> = ({contentType}) => {
   return (
     <>
       {contents && contents.results.map(
-        post => post.data.capa.url && (
+        post => post.data.capa?.url && (
           <a-entity 
             key={ContentData[post.id].name} 
             id={ContentData[post.id].name}

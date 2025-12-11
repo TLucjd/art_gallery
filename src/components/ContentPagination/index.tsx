@@ -59,7 +59,7 @@ const ContentPagination: React.FC<IContentProps> = ({contentId}) => {
             <h3>{RichText.asText(sub.subtitle)}</h3>
           ))}
           <div>
-            {content.data.paginas.map((pagina, index: number) => {
+            {content.data.paginas?.map((pagina, index: number) => {
               if(index === currentPage){
                 return(
                   <div key={contentId+index}>
@@ -73,7 +73,7 @@ const ContentPagination: React.FC<IContentProps> = ({contentId}) => {
             })}
           </div>
           
-          {content.data.paginas.length > 1 && (
+          {content.data.paginas && content.data.paginas.length > 1 && (
             <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={content.data.paginas.length} />
           )}
         </Container>

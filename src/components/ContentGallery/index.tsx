@@ -26,7 +26,10 @@ const ContentGallery: React.FC<IContentProps> = ({contentId}) => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const fetchData = useCallback(async (id: string) => {
+    console.log('🖼️ ContentGallery: Fetching data for ID:', id);
     const response: IGalleryDocument = await Client.getByID(id, {});
+    console.log('🖼️ ContentGallery: Response received:', response);
+    console.log('🖼️ Gallery data:', response?.data?.galeria);
     setContent(response);
   }, []);
 
@@ -41,6 +44,8 @@ const ContentGallery: React.FC<IContentProps> = ({contentId}) => {
         <Container>
           <Content>
             {content.data.galeria.map((galleryItem: any, index: number) => {
+              console.log(`🖼️ Gallery item ${index}:`, galleryItem);
+              console.log(`🖼️ Image URL:`, galleryItem?.imagem?.url);
               if(index === currentImage){
                 return(
                   <>

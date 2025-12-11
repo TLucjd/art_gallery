@@ -25,86 +25,115 @@ interface IMenuTexts{
 }
 
 const GalleryMap: React.FC = () => {
-    const {teleportCamera} = useTeleport();
-    const {setSidebarVisibility} = useSidebar();
-    const {setPopupVisibility, setContent} = usePopup();
-    const [content, setMenuContent] = useState<IMenuTexts>();
-  
-    const fetchData = useCallback(async (id: string) => {
-      const response: IMenuTexts = await Client.getByID(id, {});
-      setMenuContent(response);
-    }, []);
-  
-    useEffect(() => {
-      fetchData('Yc4VtxMAACEAsMew');
-    }, [fetchData]);
+  const {teleportCamera} = useTeleport();
+  const {setSidebarVisibility} = useSidebar();
+  const {setPopupVisibility, setContent} = usePopup();
+  const [content, setMenuContent] = useState<IMenuTexts>();
 
-    const handleTeleport = (roomName: string) => {
-        teleportCamera(roomName);
-        setSidebarVisibility(false);
-    }
+  const fetchData = useCallback(async (id: string) => {
+    const response: IMenuTexts = await Client.getByID(id, {});
+    setMenuContent(response);
+  }, []);
 
-    const observatorioTeleport = () => {
-        teleportCamera('observatorio');
-        setSidebarVisibility(false);
-        setPopupVisibility(true);
-        setContent(<ObservatorioPopup closePopup={() => setPopupVisibility(false)} />)
-    }
+  useEffect(() => {
+    fetchData('Yc4VtxMAACEAsMew');
+  }, [fetchData]);
 
-    const handleClose = () => {
-        setSidebarVisibility(false);
-    }
+  const handleTeleport = (roomName: string) => {
+    teleportCamera(roomName);
+    setSidebarVisibility(false);
+  }
 
-    return (
-        <>
-            <ItemContainer onClick={() => handleTeleport('ensaios')}>
-                <ItemTitle>ensaios</ItemTitle>
-                <ItemDescription>{RichText.render(content?.data.texto_ensaios)}</ItemDescription>
-            </ItemContainer>
+  const observatorioTeleport = () => {
+    teleportCamera('observatorio');
+    setSidebarVisibility(false);
+    setPopupVisibility(true);
+    setContent(<ObservatorioPopup closePopup={() => setPopupVisibility(false)} />)
+  }
 
-            <ItemContainer onClick={() => handleTeleport('poesias')}>
-                <ItemTitle>poesias</ItemTitle>
-                <ItemDescription>{RichText.render(content?.data.texto_poesias)}</ItemDescription>
-            </ItemContainer>
+  const handleClose = () => {
+    setSidebarVisibility(false);
+  }
 
-            <ItemContainer onClick={() => handleTeleport('exposicoes')}>
-                <ItemTitle>exposições</ItemTitle>
-                <ItemDescription>{RichText.render(content?.data.texto_exposicoes)}</ItemDescription>
-            </ItemContainer>
+  return (
+    <>
+      {/* 1. BEM-VINDO – CỔNG VĂN HOÁ */}
+      <ItemContainer onClick={() => handleTeleport('boasVindas')}>
+        <ItemTitle>bem-vindo</ItemTitle>
+        <ItemDescription>
+          {content?.data.texto_bemvindo && RichText.render(content.data.texto_bemvindo)}
+        </ItemDescription>
+      </ItemContainer>
 
-            <ItemContainer onClick={() => observatorioTeleport()}>
-                <ItemTitle>observatório</ItemTitle>
-                <ItemDescription>{RichText.render(content?.data.texto_observatorio)}</ItemDescription>
-            </ItemContainer>
+      {/* 2. ENSAIOS – LÝ LUẬN */}
+      <ItemContainer onClick={() => handleTeleport('ensaios')}>
+        <ItemTitle>ensaios</ItemTitle>
+        <ItemDescription>
+          {content?.data.texto_ensaios && RichText.render(content.data.texto_ensaios)}
+        </ItemDescription>
+      </ItemContainer>
 
-            <ItemContainer onClick={() => handleTeleport('contosENovelas')}>
-                <ItemTitle>contos & novelas</ItemTitle>
-                <ItemDescription>{RichText.render(content?.data.texto_contos_novelas)}</ItemDescription>
-            </ItemContainer>
+      {/* 3. EXPOSIÇÕES – BẢO TÀNG THỊ GIÁC */}
+      <ItemContainer onClick={() => handleTeleport('exposicoes')}>
+        <ItemTitle>exposições</ItemTitle>
+        <ItemDescription>
+          {content?.data.texto_exposicoes && RichText.render(content.data.texto_exposicoes)}
+        </ItemDescription>
+      </ItemContainer>
 
-            <ItemContainer onClick={() => handleTeleport('infantis')}>
-                <ItemTitle>infantis</ItemTitle>
-                <ItemDescription>{RichText.render(content?.data.texto_infantis)}</ItemDescription>
-            </ItemContainer>
+      {/* 4. OBSERVATÓRIO – GÓC SUY NGẪM (CÓ POPUP) */}
+      <ItemContainer onClick={observatorioTeleport}>
+        <ItemTitle>observatório</ItemTitle>
+        <ItemDescription>
+          {content?.data.texto_observatorio && RichText.render(content.data.texto_observatorio)}
+        </ItemDescription>
+      </ItemContainer>
 
-            <ItemContainer onClick={() => handleTeleport('boasVindas')}>
-                <ItemTitle>bem-vindo</ItemTitle>
-                <ItemDescription>{RichText.render(content?.data.texto_bemvindo)}</ItemDescription>
-            </ItemContainer>
+      {/* 5. INFANTIS – GÓC THIẾU NHI */}
+      <ItemContainer onClick={() => handleTeleport('infantis')}>
+        <ItemTitle>infantis</ItemTitle>
+        <ItemDescription>
+          {content?.data.texto_infantis && RichText.render(content.data.texto_infantis)}
+        </ItemDescription>
+      </ItemContainer>
 
-            <ItemContainer>
-                <ItemTitle>contatos</ItemTitle>
-                <ItemDescription>
-                    <ContactEmail href="mailto:contato@l2bgaleria.com">contato@l2bgaleria.com</ContactEmail>
-                </ItemDescription>
-                <aside>
-                  <a href="https://www.instagram.com/l2bgaleria/" target="_blank" rel="noreferrer"><img src={instagramLogo} alt="instagram"/></a>
-                  <a href="https://www.facebook.com/L2BGaleria/" target="_blank" rel="noreferrer"><img src={metaLogo} alt="meta"/></a>
-                </aside>
-            </ItemContainer>
-            <CloseButton onClick={handleClose} >&times;</CloseButton>
-        </>
-    )
+      {/* 6. CONTOS & NOVELAS – CHUYỆN ĐỜI THƯỜNG */}
+      <ItemContainer onClick={() => handleTeleport('contosENovelas')}>
+        <ItemTitle>contos & novelas</ItemTitle>
+        <ItemDescription>
+          {content?.data.texto_contos_novelas && RichText.render(content.data.texto_contos_novelas)}
+        </ItemDescription>
+      </ItemContainer>
+
+      {/* 7. POESIAS – PHÒNG TRÍCH DẪN KẾT THÚC */}
+      <ItemContainer onClick={() => handleTeleport('poesias')}>
+        <ItemTitle>poesias</ItemTitle>
+        <ItemDescription>
+          {content?.data.texto_poesias && RichText.render(content.data.texto_poesias)}
+        </ItemDescription>
+      </ItemContainer>
+
+      {/* 8. CONTATOS */}
+      <ItemContainer>
+        <ItemTitle>contatos</ItemTitle>
+        <ItemDescription>
+          <ContactEmail href="mailto:tanluc.jdtech04@gmail.com">
+            tanluc.jdtech04@gmail.com
+          </ContactEmail>
+        </ItemDescription>
+        <aside>
+          <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+            <img src={instagramLogo} alt="instagram"/>
+          </a>
+          <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+            <img src={metaLogo} alt="meta"/>
+          </a>
+        </aside>
+      </ItemContainer>
+
+      <CloseButton onClick={handleClose}>&times;</CloseButton>
+    </>
+  )
 }
 
 export default GalleryMap;

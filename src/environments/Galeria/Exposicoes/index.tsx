@@ -27,12 +27,17 @@ const Exposicoes: React.FC = () => {
   const {cameraCloseIn} = useClosedCamera();
 
   const handleClick = async (id: string, cameraCloseCoords: any, hotspot: string) => {
+    console.log('🎯 Exposicoes: Clicked hotspot with ID:', id);
     const response: IResponse = await Client.getByID(id, {});
+    console.log('🎯 Exposicoes: Response:', response);
+    console.log('🎯 Exposicoes: tipo_de_conteudo:', response.data.tipo_de_conteudo);
 
     if(response.data.tipo_de_conteudo === false){
+      console.log('🎯 Opening ContentPagination');
       setSidebarVisibility(true);
       setContent(<ContentPagination contentId={id} />);
     } else {
+      console.log('🎯 Opening ContentGallery (with images)');
       setOverlayVisibility(true);
       setOverlayContent(<ContentGallery contentId={id} />);
     }
@@ -62,6 +67,7 @@ const Exposicoes: React.FC = () => {
     {/* <!--Hotspots--> */}
     <a-entity id="exposicoes_hotspot_01" hotspot_collider data-art-ref="YK8CYxAAACUAYFDH" onClick={() => handleClick('YK8CYxAAACUAYFDH', {position:{x:9.7, y: 1.6, z:-5.330},rotation:orientations.direita}, 'exposicoes_hotspot_01')} mixin="hotspotMixin" class="collidable" position="11.410 1.140 -5.310"></a-entity>
     <a-entity id="exposicoes_hotspot_02" hotspot_collider data-art-ref="YK8LaRAAACMAYHkL" onClick={() => handleClick('YK8LaRAAACMAYHkL', {position:{x:9.7, y: 1.6, z:-2.990},rotation:orientations.direita}, 'exposicoes_hotspot_02')} mixin="hotspotMixin" class="collidable" position="11.410 1.140 -3.000"></a-entity>
+    <a-entity id="exposicoes_hotspot_03" hotspot_collider data-art-ref="EXPO_003_NEW" onClick={() => handleClick('EXPO_003_NEW', {position:{x:9.7, y: 1.6, z:-0.500},rotation:orientations.direita}, 'exposicoes_hotspot_03')} mixin="hotspotMixin" class="collidable" position="11.410 1.140 -0.500"></a-entity>
     <a-entity id="exposicoes_upStairs" onClick={() => observatorioTeleport()} mixin="upStairs" class="collidable" position="15 1.560 -6.000" scale="0.35 0.35 1" ></a-entity>
   </a-entity>
   );

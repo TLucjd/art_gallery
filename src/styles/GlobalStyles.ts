@@ -2,6 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 import '../assets/fonts/font-faces.css';
 
 const GlobalStyles = createGlobalStyle`
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap');
+
     :root{
         --l2b-transparent: transparent;
 
@@ -27,17 +29,18 @@ const GlobalStyles = createGlobalStyle`
     }
     body{
       margin: 0;
+      font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
     p, div, textarea{
-      font-family: 'Volkart-Light';
+      font-family: 'Volkart-Light', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-weight: normal;
     }
     h1, h2 {
-      font-family: 'Volkart-Bold';
+      font-family: 'Volkart-Bold', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-weight: normal;
     }
     h3, h4, h5, h6{
-      font-family: 'Volkart-Regular';
+      font-family: 'Volkart-Regular', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-weight: normal;
     }
 `;
