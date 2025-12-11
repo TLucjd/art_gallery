@@ -4,30 +4,47 @@
 export const exposicoesData: { [key: string]: any } = {
   'YK8CYxAAACUAYFDH': {
     data: {
-      tipo_de_conteudo: false,
-      titulo: [{ text: 'Chiến dịch chống nạn mù chữ', type: 'heading1', spans: [] }],
-      conteudo: [
+      tipo_de_conteudo: true,
+      titulo: [{ text: 'Exposição 1 – Kháng chiến chống Pháp', type: 'heading1', spans: [] }],
+      galeria: [
         {
-          text: 'Ngay sau Cách mạng Tháng Tám, Hồ Chí Minh xác định chống nạn mù chữ là một trong những nhiệm vụ cấp bách nhất của Nhà nước mới.',
-          type: 'paragraph',
-          spans: []
-        },
-        {
-          text: 'Khẩu hiệu "Một dân tộc dốt là một dân tộc yếu" cho thấy văn hoá và giáo dục là điều kiện để giữ vững độc lập dân tộc và xây dựng đất nước phát triển.',
-          type: 'paragraph',
-          spans: []
+          imagem: { url: '/img/exposicoes1.jpg', alt: 'Kháng chiến' },
+          legenda: [
+            {
+              text: 'Kháng chiến chống Pháp: từ kháng chiến toàn dân đến thắng lợi Điện Biên Phủ.',
+              type: 'paragraph',
+              spans: []
+            }
+          ],
+          texto_mobile: [
+            {
+              text: 'Cuộc kháng chiến chống Pháp (1946-1954) là cuộc chiến tranh giải phóng dân tộc vĩ đại, khẳng định quyết tâm của nhân dân Việt Nam bảo vệ nền độc lập vừa giành được.',
+              type: 'paragraph',
+              spans: []
+            },
+            {
+              text: 'Dưới sự lãnh đạo của Hồ Chí Minh và Đảng, toàn dân đã đoàn kết, kiên cường, sáng tạo trong chiến đấu, biến "chiến tranh là việc của toàn dân" thành hiện thực.',
+              type: 'paragraph',
+              spans: []
+            },
+            {
+              text: 'Chiến thắng Điện Biên Phủ đã "lừng lẫy năm châu, chấn động địa cầu", mở đường cho hòa bình, độc lập và thống nhất đất nước.',
+              type: 'paragraph',
+              spans: []
+            }
+          ]
         }
       ]
     }
   },
-
+  
   'YK8LaRAAACMAYHkL': {
     data: {
       tipo_de_conteudo: true,
       titulo: [{ text: 'Đời sống mới – Cần, Kiệm, Liêm, Chính', type: 'heading1', spans: [] }],
       galeria: [
         {
-          imagem: { url: 'https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=800', alt: 'Đời sống mới' },
+          imagem: { url: '/img/exposicoes2.jpg', alt: 'Đời sống mới' },
           legenda: [
             {
               text: 'Đời sống mới: bỏ thói xấu, xây thói quen tốt trong lao động, sinh hoạt, quan hệ giữa người với người.',
@@ -37,14 +54,24 @@ export const exposicoesData: { [key: string]: any } = {
           ],
           texto_mobile: [
             {
-              text: 'Hồ Chí Minh kêu gọi xây dựng đời sống mới với bốn chuẩn mực: Cần – Kiệm – Liêm – Chính, bắt đầu từ mỗi cá nhân và lan toả ra cộng đồng.',
+              text: 'Phong trào Đời sống mới mà Hồ Chí Minh kêu gọi không phải điều gì xa vời, mà bắt đầu từ những việc rất nhỏ: cách ăn, ở, mặc, đi lại, giữ gìn vệ sinh, nói năng, ứng xử trong gia đình và ngoài xã hội.',
+              type: 'paragraph',
+              spans: []
+            },
+            {
+              text: 'Đời sống mới gắn với việc từ bỏ những thói quen lạc hậu, lãng phí, tuỳ tiện; xây dựng nếp sống ngăn nắp, kỷ luật, tôn trọng tập thể và không gian chung – từ nơi làm việc, khu dân cư đến trường học, ký túc xá.',
+              type: 'paragraph',
+              spans: []
+            },
+            {
+              text: 'Khi mỗi người tự sửa mình từng chút một, biết quý trọng thời gian, tài sản và công sức của người khác, thì cả cộng đồng sẽ cùng tiến tới một nền văn hoá mới: văn minh hơn, lành mạnh hơn và giàu tính nhân văn hơn.',
               type: 'paragraph',
               spans: []
             }
           ]
         },
         {
-          imagem: { url: 'https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=800', alt: 'Cần – Kiệm – Liêm – Chính' },
+          imagem: { url: '/img/exposicoes3.jpg', alt: 'Cần – Kiệm – Liêm – Chính' },
           legenda: [
             {
               text: 'Cần – Kiệm – Liêm – Chính là nền tảng đạo đức của người cách mạng và mỗi công dân trong xã hội mới.',
@@ -54,7 +81,17 @@ export const exposicoesData: { [key: string]: any } = {
           ],
           texto_mobile: [
             {
-              text: 'Bốn phẩm chất này gắn trực tiếp với việc chống tham ô, lãng phí, quan liêu và chủ nghĩa cá nhân trong bộ máy nhà nước cũng như đời sống hằng ngày.',
+              text: 'Hồ Chí Minh coi Cần – Kiệm – Liêm – Chính là “gốc” của người cách mạng: Cần là siêng năng, hết lòng với công việc; Kiệm là tiết kiệm sức lực, thời gian, tiền của, tài nguyên; Liêm là trong sạch, không tham của công; Chính là thẳng thắn, trung thực, sống có nguyên tắc.',
+              type: 'paragraph',
+              spans: []
+            },
+            {
+              text: 'Bốn phẩm chất này gắn trực tiếp với cuộc đấu tranh chống tham ô, lãng phí, quan liêu, chủ nghĩa cá nhân – những “căn bệnh” có thể làm suy yếu bộ máy nhà nước và làm mất lòng tin của nhân dân.',
+              type: 'paragraph',
+              spans: []
+            },
+            {
+              text: 'Trong đời sống hằng ngày hôm nay, Cần – Kiệm – Liêm – Chính có thể được thể hiện rất cụ thể: không gian lận trong thi cử, không lãng phí điện nước, không trục lợi từ tiền chung, dám nói thẳng điều đúng, dám nhận trách nhiệm về phần mình.',
               type: 'paragraph',
               spans: []
             }
@@ -67,37 +104,30 @@ export const exposicoesData: { [key: string]: any } = {
   'EXPO_003_NEW': {
     data: {
       tipo_de_conteudo: true,
-      titulo: [{ text: 'Giáo dục, văn nghệ và thế hệ trẻ', type: 'heading1', spans: [] }],
+      titulo: [{ text: 'Exposição 3 – Di sản Hồ Chí Minh', type: 'heading1', spans: [] }],
       galeria: [
         {
-          imagem: { url: 'https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800', alt: 'Giáo dục mới' },
+          imagem: { url: '/img/exposicoes4.jpg', alt: 'Di sản' },
           legenda: [
             {
-              text: 'Nhà trường mới phải gắn với thực tế, phục vụ Tổ quốc và nhân dân, đào tạo con người vừa "hồng" vừa "chuyên".',
+              text: 'Di sản Hồ Chí Minh: tư tưởng, tấm gương đạo đức và phong cách sống còn mãi với dân tộc.',
               type: 'paragraph',
               spans: []
             }
           ],
           texto_mobile: [
             {
-              text: 'Hồ Chí Minh yêu cầu giáo dục phải đào tạo những người chủ tương lai của đất nước, có tri thức, đạo đức và tinh thần phục vụ nhân dân.',
+              text: 'Di sản Hồ Chí Minh không chỉ là những tác phẩm, lời dạy mà còn là cả một phong cách làm việc, lối sống giản dị, gần gũi với nhân dân.',
               type: 'paragraph',
               spans: []
-            }
-          ]
-        },
-        {
-          imagem: { url: 'https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=800', alt: 'Thanh niên & văn hoá' },
-          legenda: [
+            },
             {
-              text: 'Thanh niên là lực lượng xung kích trong xây dựng và bảo vệ nền văn hoá mới.',
+              text: 'Tư tưởng Hồ Chí Minh về độc lập dân tộc gắn liền với chủ nghĩa xã hội, về đại đoàn kết toàn dân tộc, về xây dựng con người mới vẫn là kim chỉ nam cho sự nghiệp cách mạng.',
               type: 'paragraph',
               spans: []
-            }
-          ],
-          texto_mobile: [
+            },
             {
-              text: 'Văn nghệ, báo chí và các hoạt động văn hoá phải hướng đến việc nâng cao đời sống tinh thần, bồi dưỡng lý tưởng cho thế hệ trẻ.',
+              text: 'Tấm gương đạo đức của Người – Cần, Kiệm, Liêm, Chính, chí công vô tư – là di sản quý báu nhất cho các thế hệ mai sau.',
               type: 'paragraph',
               spans: []
             }

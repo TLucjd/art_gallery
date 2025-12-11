@@ -20,7 +20,8 @@ interface IPaginationDocument{
     subtitulos?: {
       subtitle: any;
     }[];
-    paginas: {
+    conteudo?: any; // Direct content array (for Observatorio)
+    paginas?: {
       subtitulo_de_pagina?: any;
       conteudo: any;
     }[]
@@ -58,20 +59,31 @@ const ContentPagination: React.FC<IContentProps> = ({contentId}) => {
           {content.data.subtitulos && content.data.subtitulos.map(sub => (
             <h3>{RichText.asText(sub.subtitle)}</h3>
           ))}
-          <div>
-            {content.data.paginas?.map((pagina, index: number) => {
-              if(index === currentPage){
-                return(
-                  <div key={contentId+index}>
-                    {pagina.subtitulo_de_pagina && (
-                      <h3>{RichText.asText(pagina.subtitulo_de_pagina)}</h3>
-                    )}
-                    {RichText.render(pagina.conteudo)}
-                  </div>
-                );
-              }
-            })}
-          </div>
+          
+          {/* Handle direct conteudo array (for Observatorio) */}
+          {content.data.conteudo && (
+            <div>
+              {RichText.render(content.data.conteudo)}
+            </div>
+          )}
+
+          {/* Handle paginas structure (for other content) */}
+          {content.data.paginas && (
+            <div>
+              {content.data.paginas.map((pagina, index: number) => {
+                if(index === currentPage){
+                  return(
+                    <div key={contentId+index}>
+                      {pagina.subtitulo_de_pagina && (
+                        <h3>{RichText.asText(pagina.subtitulo_de_pagina)}</h3>
+                      )}
+                      {RichText.render(pagina.conteudo)}
+                    </div>
+                  );
+                }
+              })}
+            </div>
+          )}
           
           {content.data.paginas && content.data.paginas.length > 1 && (
             <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={content.data.paginas.length} />

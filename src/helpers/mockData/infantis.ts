@@ -7,7 +7,7 @@ export const infantisData: { [key: string]: any } = {
       titulo: [{ text: 'Thiếu nhi – "Tiểu chủ nhân" của đất nước', type: 'heading1', spans: [] }],
       galeria: [
         {
-          imagem: { url: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800', alt: 'Thiếu nhi cười' },
+          imagem: { url: '/img/infantis1.jpg', alt: 'Thiếu nhi cười' },
           legenda: [
             { text: 'Thiếu nhi được Hồ Chí Minh coi là "tiểu chủ nhân" của đất nước, cần được yêu thương và chăm sóc toàn diện.', type: 'paragraph', spans: [] }
           ],
@@ -16,7 +16,7 @@ export const infantisData: { [key: string]: any } = {
           ]
         },
         {
-          imagem: { url: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800', alt: 'Trẻ em đọc sách' },
+          imagem: { url: '/img/infantis2.jpg', alt: 'Trẻ em đọc sách' },
           legenda: [
             { text: 'Giáo dục thiếu nhi là điểm xuất phát của việc xây dựng nền văn hoá mới, bền vững từ gốc.', type: 'paragraph', spans: [] }
           ],
@@ -33,7 +33,7 @@ export const infantisData: { [key: string]: any } = {
       titulo: [{ text: 'Thư gửi các cháu thiếu nhi', type: 'heading1', spans: [] }],
       galeria: [
         {
-          imagem: { url: 'https://images.unsplash.com/photo-1522661067900-ab829854a57f?w=800', alt: 'Trẻ em cầm cờ' },
+          imagem: { url: '/img/infantis3.jpg', alt: 'Trẻ em cầm cờ' },
           legenda: [
             { text: 'Trong nhiều lá thư, Hồ Chí Minh gửi lời chúc, lời dặn dò thiếu nhi nhân các dịp lễ, Tết, Trung thu.', type: 'paragraph', spans: [] }
           ],
@@ -42,7 +42,7 @@ export const infantisData: { [key: string]: any } = {
           ]
         },
         {
-          imagem: { url: 'https://images.unsplash.com/photo-1522651767861-9e60c9797e47?w=800', alt: 'Trẻ em vui chơi' },
+          imagem: { url: '/img/infantis4.jpg', alt: 'Trẻ em vui chơi' },
           legenda: [
             { text: 'Vui chơi lành mạnh cũng là một phần của đời sống văn hoá mới dành cho thiếu nhi.', type: 'paragraph', spans: [] }
           ],
@@ -59,7 +59,7 @@ export const infantisData: { [key: string]: any } = {
       titulo: [{ text: 'Trường học mới cho thiếu nhi', type: 'heading1', spans: [] }],
       galeria: [
         {
-          imagem: { url: 'https://images.unsplash.com/photo-1588072432836-e10032774350?w=800', alt: 'Lớp học thiếu nhi' },
+          imagem: { url: '/img/infantis5.jpg', alt: 'Lớp học thiếu nhi' },
           legenda: [
             { text: 'Trường học trong chế độ mới phải khác hẳn trường học thực dân, phong kiến, đặt học sinh ở vị trí trung tâm.', type: 'paragraph', spans: [] }
           ],
@@ -68,7 +68,7 @@ export const infantisData: { [key: string]: any } = {
           ]
         },
         {
-          imagem: { url: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=800', alt: 'Cô giáo và học sinh' },
+          imagem: { url: '/img/infantis6.jpg', alt: 'Cô giáo và học sinh' },
           legenda: [
             { text: 'Thầy cô giáo có vai trò rất quan trọng trong việc gieo mầm văn hoá và đạo đức cho thế hệ nhỏ.', type: 'paragraph', spans: [] }
           ],
@@ -85,7 +85,7 @@ export const infantisData: { [key: string]: any } = {
       titulo: [{ text: 'Thiếu nhi và lối sống mới', type: 'heading1', spans: [] }],
       galeria: [
         {
-          imagem: { url: 'https://images.unsplash.com/photo-1509099863731-ef4bff19e808?w=800', alt: 'Trẻ em làm việc nhóm' },
+          imagem: { url: '/img/infantis7.jpg', alt: 'Trẻ em làm việc nhóm' },
           legenda: [
             { text: 'Thiếu nhi tập làm việc nhóm, giúp đỡ nhau trong học tập và sinh hoạt hằng ngày.', type: 'paragraph', spans: [] }
           ],
@@ -94,7 +94,7 @@ export const infantisData: { [key: string]: any } = {
           ]
         },
         {
-          imagem: { url: 'https://images.unsplash.com/photo-1503457574462-bd27054394c1?w=800', alt: 'Trẻ em trồng cây' },
+          imagem: { url: '/img/infantis8.jpg', alt: 'Trẻ em trồng cây' },
           legenda: [
             { text: 'Hoạt động lao động, trồng cây, bảo vệ môi trường là một phần của đời sống văn hoá lành mạnh dành cho thiếu nhi.', type: 'paragraph', spans: [] }
           ],

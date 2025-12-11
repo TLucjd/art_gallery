@@ -5,7 +5,7 @@ import { useClosedCamera } from '../../../hooks/ClosedCamera';
 
 import ContentGallery from '../../../components/ContentGallery';
 // import Covers from '../../../components/Covers';  // <= cái này sắp không cần nữa
-import { boasVindasData } from '../../../helpers/mockData';
+import { boasVindasData } from '../../../helpers/mockData/boasVindas';
 
 const BoasVindas: React.FC = () => {
   const {setContent: setOverlayContent, setOverlayVisibility} = useOverlay();
@@ -81,7 +81,7 @@ const BoasVindas: React.FC = () => {
         position="-3.332 5.801 -4.150"
         rotation="0 90 0"
         scale="1.45 2.35 1"
-        material={`src: url(${slide1.data.capa.url}); side: double`}
+        material={`src: url(${slide1.data.galeria[0].imagem.url}); side: double`}
       ></a-plane>
 
       {/* Panel giữa – BoasVindas 2 */}
@@ -90,7 +90,7 @@ const BoasVindas: React.FC = () => {
         position="0.074 5.801 -6.767"
         rotation="0 0 0"
         scale="1.45 2.35 1"
-        material={`src: url(${slide2.data.capa.url}); side: double`}
+        material={`src: url(${slide2.data.galeria[0].imagem.url}); side: double`}
       ></a-plane>
 
       {/* Panel phải – BoasVindas 3 */}
@@ -99,7 +99,7 @@ const BoasVindas: React.FC = () => {
         position="3.382 5.801 -4.150"
         rotation="0 -90 0"
         scale="1.45 2.35 1"
-        material={`src: url(${slide3.data.capa.url}); side: double`}
+        material={`src: url(${slide3.data.galeria[0].imagem.url}); side: double`}
       ></a-plane>
 
       {/* Nếu Covers chỉ vẽ panel trắng thì có thể bỏ đi */}

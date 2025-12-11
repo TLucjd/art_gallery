@@ -1,53 +1,35 @@
 import React from 'react';
-import Client from '../../../helpers/api';
 import orientations from '../../../helpers/orientations';
 
 import { useTeleport } from '../../../hooks/Teleport';
 import { useOverlay } from '../../../hooks/Overlay';
-import { useSidebar } from '../../../hooks/Sidebar';
 import { useClosedCamera } from '../../../hooks/ClosedCamera';
 
-import Covers from '../../../components/Covers';
 import ContentGallery from '../../../components/ContentGallery';
-import ContentPagination from '../../../components/ContentPagination';
 import ObservatorioPopup from '../../../components/ObservatorioPopup';
 import { usePopup } from '../../../hooks/Popup';
-
-interface IResponse{
-  data: {
-    tipo_de_conteudo: boolean;
-  }
-}
+import { exposicoesData } from '../../../helpers/mockData/exposicoes';
 
 const Exposicoes: React.FC = () => {
   const {teleportCamera} = useTeleport();
-  const {setSidebarVisibility, setContent} = useSidebar();
   const {setOverlayVisibility, setContent: setOverlayContent} = useOverlay();
   const {setPopupVisibility, setContent: setPopupContent} = usePopup();
   const {cameraCloseIn} = useClosedCamera();
 
-  const handleClick = async (id: string, cameraCloseCoords: any, hotspot: string) => {
-    console.log('🎯 Exposicoes: Clicked hotspot with ID:', id);
-    const response: IResponse = await Client.getByID(id, {});
-    console.log('🎯 Exposicoes: Response:', response);
-    console.log('🎯 Exposicoes: tipo_de_conteudo:', response.data.tipo_de_conteudo);
+  const coverPositions: { [key: string]: { position: string; rotation: string; width: number; height: number } } = {
+    'YK8CYxAAACUAYFDH': { position: '11.756 1.600 -5.340', rotation: '0 -90 0', width: 1, height: 1.5 },
+    'YK8LaRAAACMAYHkL': { position: '11.736 1.600 -2.962', rotation: '0 -90 0', width: 1, height: 1.5 },
+    'EXPO_003_NEW': { position: '11.736 1.600 -0.500', rotation: '0 -90 0', width: 1, height: 1.5 },
+  };
 
-    if(response.data.tipo_de_conteudo === false){
-      console.log('🎯 Opening ContentPagination');
-      setSidebarVisibility(true);
-      setContent(<ContentPagination contentId={id} />);
-    } else {
-      console.log('🎯 Opening ContentGallery (with images)');
-      setOverlayVisibility(true);
-      setOverlayContent(<ContentGallery contentId={id} />);
-    }
-
+  const handleClick = (id: string, cameraCloseCoords: any, hotspot: string) => {
     cameraCloseIn(cameraCloseCoords, hotspot);
+    setOverlayVisibility(true);
+    setOverlayContent(<ContentGallery contentId={id} layout="horizontal" />);
   }
 
-  const observatorioTeleport = async () => {
+  const observatorioTeleport = () => {
     teleportCamera('observatorio');
-    setSidebarVisibility(false);
     setPopupVisibility(true);
     setPopupContent(<ObservatorioPopup closePopup={() => setPopupVisibility(false)} />)
   }
@@ -62,7 +44,23 @@ const Exposicoes: React.FC = () => {
     <a-box id="Exposicoes Wall_2" position="7.521 1.95 -5.710" scale="0.08 2.79 1.8" class="collidable" mixin="occluderMaterial"></a-box>
 
     {/* <!--Imagens dos totens--> */}
-    <Covers contentType="exposicoes" />
+    {['YK8CYxAAACUAYFDH', 'YK8LaRAAACMAYHkL', 'EXPO_003_NEW'].map((contentId) => {
+      const content = exposicoesData[contentId];
+      const pos = coverPositions[contentId];
+      if (!pos || !content?.data?.galeria?.[0]?.imagem?.url) return null;
+      
+      return (
+        <a-entity
+          key={`exposicoes_capa_${contentId}`}
+          id={`exposicoes_capa_${contentId}`}
+          class="collidable"
+          geometry={`primitive: plane; width: ${pos.width}; height: ${pos.height}`}
+          material={`shader: flat; src: ${content.data.galeria[0].imagem.url}`}
+          position={pos.position}
+          rotation={pos.rotation}
+        ></a-entity>
+      );
+    })}
 
     {/* <!--Hotspots--> */}
     <a-entity id="exposicoes_hotspot_01" hotspot_collider data-art-ref="YK8CYxAAACUAYFDH" onClick={() => handleClick('YK8CYxAAACUAYFDH', {position:{x:9.7, y: 1.6, z:-5.330},rotation:orientations.direita}, 'exposicoes_hotspot_01')} mixin="hotspotMixin" class="collidable" position="11.410 1.140 -5.310"></a-entity>
