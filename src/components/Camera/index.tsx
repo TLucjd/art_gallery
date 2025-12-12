@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import {THREE} from 'aframe';
+// @ts-ignore
+import * as THREE from 'three';
 
 import NextPositionGizmo from './NextPositionGizmo';
 
